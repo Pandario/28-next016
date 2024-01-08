@@ -9,7 +9,7 @@ export default async function Project({ params }) {
         <div>
             <div className="">{project.name}</div>
             <Link href={`${project.url}`} target="_blank">click</Link>
-            <Link href="28-next016.vercel.app">Home</Link>
+            <Link href="/">Home</Link>
         </div>
     )
 }
