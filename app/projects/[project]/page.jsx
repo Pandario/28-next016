@@ -19,7 +19,7 @@ export default async function Project({ params }) {
                        Home
                     </Link>
 
-                    <Link className="text-white ml-4 p-2 hover:bg-indigo-700 rounded-lg" href={`${project.url}`}>
+                    <Link target="_blank" className="text-white ml-4 p-2 hover:bg-indigo-700 rounded-lg" href={`${project.url}`}>
                             Project Link
                      </Link>
 
@@ -36,7 +36,7 @@ export default async function Project({ params }) {
                 <Link href="/" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     Home
                 </Link>
-                <Link href={`${project.url}`} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                <Link href={`${project.url}`} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" target="_blank">
                     Click
                 </Link>
             </div>
