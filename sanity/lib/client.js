@@ -36,7 +36,7 @@ export async function getProject(slug) {
         "slug": slug.current,
         "image": image.asset->url,
         url,
-        content
+        content,
       }`,
       { slug }
     )
