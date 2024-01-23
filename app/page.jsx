@@ -1,17 +1,19 @@
 import { getProjects  } from "@/sanity/lib/client"; 
 import Image from "next/image";
 import Link from "next/link";
+import Nav from "./(components)/nav";
+import { Top } from "./(components)/top";
 
 
 export default  async function Home() {
   const projects = await getProjects();
 
   return (
-  <div className="max-w-5xl mx-auto py-20">
-    <h1 className="text-7xl font-extrabold">My new <span className="bg-gradient-to-r
-    from-orange-400 via-rose-700 to-purple-700 bg-clip-text text-transparent">page</span></h1>
+  <div className="">
+    <Nav/>
+  <div className="max-w-5xl mx-auto py-10">
 
-    <p className="my-20 text-xl text-gray-700">My projects here!</p>
+    <p className=" text-2xl font-semibold text-gray-700">You can check my projects here!</p>
 
         <div className="mt-5 grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => 
@@ -43,6 +45,12 @@ export default  async function Home() {
               </Link>
     )}
     </div>
+  </div>
+  <div className="text-center text-gray-800 mt-2 text-xs md:text-sm lg:text-lg font-bold mix-blend-difference">
+        © Pandario 2024
+        
+      </div>
+      <Top/>
   </div>
   )
 }

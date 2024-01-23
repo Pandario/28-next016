@@ -1,4 +1,5 @@
-''
+
+import Nav from "@/app/(components)/nav";
 import  {getProject}  from "@/sanity/lib/client";
 import SanityBlockContent from "@sanity/block-content-to-react";
 import Link from "next/link";
@@ -10,41 +11,36 @@ export default async function Project({ params }) {
 
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col min-h-svh">
             
-            {/* Navbar */}
-            <nav className="bg-blue-500 p-2">
-                <div className="flex flex-col sm:flex-row md:flex-row justify-between items-center">
-                    <Link className="text-white p-2 hover:bg-indigo-700 rounded-lg" href="/">
-                       Home
-                    </Link>
+                {/* Navbar */}
+            <Nav/>
 
-                    <Link target="_blank" className="text-white ml-4 p-2 hover:bg-indigo-700 rounded-lg" href={`${project.url}`}>
-                            Project Link
-                     </Link>
+                {/* Main part */}
 
-                </div>
-            </nav>
-        <div className="flex-1 grid grid-cols-1 md:grid-cols-3 p-4 gap-4 items-center">
-                <div className="col-span-1 md:col-span-3 text-center h-screen max-h-[77vh] mt-7">
-                    <h1 className="text-xl font-semibold mb-2">{project.name}</h1>
+            <div className="flex-1 grid grid-cols-1 md:grid-cols-3 p-4 gap-4 items-center max-w-3xl mx-auto text-center ">
+                <div className="col-span-1 md:col-span-3 text-center lg:mx-20    mt-7">
+                    <h1 className="text-2xl font-semibold mb-4">{project.name}</h1>
                     <div className="mb-16">
                         <SanityBlockContent blocks={project.content} />
                     </div>
-                                {/* Buttons */}
-            <div className="flex md:justify-center justify-between p-4 md:gap-28 mb-2">
-                <Link href="/" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Home
-                </Link>
-                <Link href={`${project.url}`} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" target="_blank">
-                    Click
-                </Link>
-            </div>
+            
+                    {/* Buttons */}
+                    <div className="flex flex-col md:flex-row justify-center gap-4 my-4">
+                        <Link href="/" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Home
+                        </Link>
+                        <Link href={`${project.url}`} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" target="_blank">
+                            Click
+                        </Link>
+                    </div>
                 </div>
 
-        </div>
-        {/* Footer */}
-        <footer className="bg-gray-200 p-4 text-center">
+            </div>
+        
+                {/* Footer */}
+
+            <footer className="bg-gray-200 p-4 text-center relative">
                 <p>© Pandario 2024</p>
             </footer>
 
